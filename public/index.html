@@ -6,11 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>complete responsive hospital website design </title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+  rel="stylesheet"
+/>
+
+
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"  href="css/result.css">
 
 </head>
 <body>
@@ -51,13 +62,45 @@
 </section>
 
 <!-- home section ends -->
+<section class="bmi" id="bmi">
+  <div class="calculator-name-header">
+      <h1 class="heading"><span>BMI</span>Checker</h1>
+
+      </div>
+      <form class="form-horizontal" id="bMI">
+        <label for="wei">Please enter your weight (in Kgs):</label>
+        <input
+          type="number"
+          name="wei"
+          id="wei"
+          placeholder="Weight"
+        /><br /><br />
+        <label for="hei">Please enter your height (in Centimeter):</label>
+        <input
+          type="number"
+          name="hei"
+          id="hei"
+          placeholder="Height"
+        /><br /><br />
+
+        <button type="button" id="bmiSet" onclick="fun3()">reset</button>
+        <button type="button" onclick="calculateBMI()">Submit</button
+        ><br /><br /><br />
+        <div class="outterbox">
+          <div class="box"><span id="resultBMI"></span></div>
+      </div>
+        <br/>
+        <span id="resultBMImsg"></span><br /><br />
+        <div id="bmiImg"></div>
+      </form>
+</section>
 
 <!-- icons section starts  -->
 <!-- icons section ends -->
 
 <!-- services section starts  -->
 
-<section class="services" id="services">
+<section class="blog" id="blog">
 
     <h1 class="heading"> our <span>services</span> </h1>
 
