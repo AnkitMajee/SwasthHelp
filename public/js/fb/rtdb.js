@@ -39,3 +39,5 @@ export const remove = (key, onRemove) => {
         });
     });
 }
+
+console.log("module fb/rtdb.js loaded");

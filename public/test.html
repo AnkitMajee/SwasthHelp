@@ -4,16 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            font-family: monospace;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <textarea id="jsinput"></textarea>
-    <button id="run">Run</button>
+    <h4>Code:</h4>
+    <textarea id="jsinput" placeholder="Enter code" style="
+        outline: none;
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin: auto;
+        height: 200px;
+        width: 300px;
+        overflow: scroll;
+        display: block; "></textarea>
+    <button id="run" style="
+        margin: 10px auto;
+        height: 30px;
+        border: 0.5px solid gray;
+        width: 75px;
+        display: block; ">
+        Run JS
+    </button>
+    <h4>Output:</h4>
+    <pre id="output" style="
+        border: 0.5px solid gray;
+        outline: none;
+        padding: 10px;
+        margin: auto;
+        height: 200px;
+        width: 300px;
+        overflow: scroll;
+        display: block; "></pre>
     <script type="module">
-        import * as Db from "/js/fb/rtdb.js";
-        document.getElementById("run").onclick = () => {
-            const code = document.getElementById("jsinput");
-            eval(code);
+        console.log = (txt) => {
+            txt = document.getElementById("output").innerText + "log: " + txt + "\n";
+            document.getElementById("output").innerText = txt;
         }
+        console.error = (txt) => {
+            txt = document.getElementById("output").innerText + "err: " + txt + "\n";
+            document.getElementById("output").innerText = txt;
+        }
+        import * as Db from "/js/fb/rtdb.js";
+        document.getElementById("run").addEventListener("click", (e) => {
+            const code = document.getElementById("jsinput").value;
+            eval(code);
+        });
+        /* example codes for rtdb access
+         * Db.set('hahaha', {
+         *   'age': 96,
+         *   'height': 240,
+         * });
+         * Db.get('hahaha', (data) => {
+         *   console.log(JSON.stringify(data, null, 2));
+         * });
+         * Db.update('hahaha', {
+         *   'height': 20,
+         * });
+         * Db.get('hahaha', (data) => {
+         *   console.log(JSON.stringify(data, null, 2));
+         * });
+         */
     </script>
 </body>
 </html>

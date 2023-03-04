@@ -27,7 +27,7 @@ const testingConfig = {
 const firebaseConfig = testingConfig;
 
 // If hosted on localhost, use database at localhost
-if (/localhost|127\.0.\.0\.1/i.test(location.href))
+if (/localhost|127\.0\.0\.1/i.test(location.href))
     firebaseConfig.databaseURL = `http://localhost:3000/?ns=${firebaseConfig.projectId}`;
 
 // Initialize Firebase
@@ -35,15 +35,15 @@ export const App = initializeApp(firebaseConfig);
 export const Database = getDatabase(App);
 // export const Auth = getAuth(App);
 
-console.log("module fbinit.js loaded");
-
 /* Seperates roots for preview and production databases.
  * This code checks if the URL is the production URL and accordingly sets the
  * database root.
  * Production URLs are *.web.app and *.firebaseapp.com
  */
-export const DBROOT = !(new RegExp(`${firebaseConfig.projectId}\.web\.app|${firebaseConfig.projectId}\.firebaseapp\.com`, "i").test(location.href))
+export const DBROOT = !(new RegExp(`${firebaseConfig.projectId}\\.web\\.app|${firebaseConfig.projectId}\\.firebaseapp\\.com`, "i").test(location.href))
     ? "/preview" 
     : "/production";
 
 export const DB_LOG_ROOT = DBROOT + "/session_logs";
+
+console.log("module fb/init.js loaded");
