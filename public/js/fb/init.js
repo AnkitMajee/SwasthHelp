@@ -8,7 +8,14 @@ import { getDatabase } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-
 
 // release firebase config
 const releaseConfig = {
-  // config will be added once the url is decided
+  apiKey: "AIzaSyAegkEBtcD_trzTj9eP7mmAvrfCXNYDo-E",
+  authDomain: "swasthhelp.firebaseapp.com",
+  databaseURL: "https://swasthhelp-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "swasthhelp",
+  storageBucket: "swasthhelp.appspot.com",
+  messagingSenderId: "504236846593",
+  appId: "1:504236846593:web:d5a041b26108e6092d5a00",
+  measurementId: "G-3M3845FWPM"
 };
 
 // testing firebase config
