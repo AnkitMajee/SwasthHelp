@@ -30,8 +30,8 @@ const testingConfig = {
 };
 
 // Your web app's Firebase configuration
-// const firebaseConfig = releaseConfig;
-const firebaseConfig = testingConfig;
+// const firebaseConfig = testingConfig;
+const firebaseConfig = releaseConfig;
 
 // If hosted on localhost, use database at localhost
 if (/localhost|127\.0\.0\.1/i.test(location.href))
