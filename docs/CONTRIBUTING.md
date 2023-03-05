@@ -38,7 +38,7 @@ Alternately, you can merge to `main-deploy` if it already exists on GitHub.
 
 #### Using the database
 Example
-```javasript
+```javascript
 console.clear();
 Db.update("key", {
   val1: 234,
