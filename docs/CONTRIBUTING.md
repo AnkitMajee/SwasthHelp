@@ -36,13 +36,32 @@ All you need to do is create a new branch called `main-deploy` from `main`, and 
 
 Alternately, you can merge to `main-deploy` if it already exists on GitHub.
 
+#### Using the database
+Example
+```javasript
+console.clear();
+Db.update("key", {
+  val1: 234,
+  val2: "string",
+  val3: [ "l", "i", "s", "t" ],
+  obj1: {
+    param1: 12,
+    param2: 13,
+  },
+});
+Db.get("key", data => {
+  console.log(JSON.stringify(data, null, 2));
+});
+```
+
+Test this code in [swasthhelp.web.app/test.html](https://swasthhelp.web.app/test.html)
+
 #### Preview
 Please see the Firebase docs.
 
 #### Regarding Android
-There exists an Android app template at [CinexSoft/sozialmapk](https://github.com/CinexSoft/sozialmapk).
+There exists an Android app at [CinexSoft/swasthhelpapk](https://github.com/CinexSoft/swasthhelpapk).
 
 This template is suited for giving a husk of an Android app to a web app to turn it into a more parmanent install, with some additional features.
 
 This means, Android is a valid technology for use in this project.
-

@@ -18,7 +18,7 @@
         background-color: #f9f9f9;
         padding: 10px;
         margin: auto;
-        height: 200px;
+        height: 300px;
         width: 300px;
         overflow: scroll;
         display: block; "></textarea>
@@ -49,10 +49,18 @@
             txt = document.getElementById("output").innerText + "err: " + txt + "\n";
             document.getElementById("output").innerText = txt;
         }
+        console.clear = () => {
+            document.getElementById("output").innerText = "";
+        }
         import * as Db from "/js/fb/rtdb.js";
         document.getElementById("run").addEventListener("click", (e) => {
             const code = document.getElementById("jsinput").value;
-            eval(code);
+            try {
+                let ret = eval(code);
+                ret && console.log(ret);
+            } catch (err) {
+                console.error(String(err));
+            }
         });
         /* example codes for rtdb access
          * Db.set('hahaha', {
