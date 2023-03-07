@@ -157,69 +157,7 @@ section:nth-child(even){
     padding: 1rem 0;
 }
 
-/* expertiment */
-label {
-  font-size: 26px;
-  font-weight: 500;
-}
-
-#resultBMI {
-  font-size: 60px;
-}
-
-#resultBMImsg {
-  font-size: 20px;
-  color: #071b88;
-}
-#wei {
-  border:var(--border);
-  box-shadow: var(--box-shadow);
-  border-radius: .5rem;
-  padding: 10px;
-  height: 20px;
-  width: 150px;
-  font-size: 18px;
-  margin-left: 5px;
-}
-
-#hei {
-  border:var(--border);
-  box-shadow: var(--box-shadow);
-  border-radius: .5rem;
-  padding: 10px;
-  height: 20px;
-  width: 150px;
-  font-size: 18px;
-  margin-left: 5px;
-}
-
-#bmiImg {
-  display: flex;
-  justify-content: center;
-}
-
-table,
-td {
-  border: 1px solid black;
-  background-color:  var(--green);
-}
-
-thead {
-  background-color: black;
-  color: #fff;
-}
-.calculator-name-header {
-  margin-top: 50px;
-  padding: 10px;
-  border-radius: 0px 15px 0px 15px;
-  box-shadow: 0px 0px 16px 1px;
-  font-size: 25px;
-  background-color: #fff;
-}
-
-
-/* expertiment */
-
+/* service */
 .services .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
@@ -251,7 +189,75 @@ thead {
     font-size: 1.4rem;
     line-height: 2;
 }
+/* service */
 
+/* expertiment */
+.calculator-name-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  background-color: #fff;
+}
+label {
+  font-size: 2.1rem;
+    color: var(--light-color);
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+.center{
+  padding-left:20px;
+  margin-left: 25px;
+}
+#resultBMI {
+  font-size: 2rem;
+}
+
+#resultBMImsg {
+  font-size: 20px;
+  color: #071b88;
+}
+#wei {
+  border:var(--border);
+  box-shadow: var(--box-shadow);
+  border-radius: .5rem;
+  padding: 10px;
+  height: 30px;
+  width: 150px;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+#hei {
+  border:var(--border);
+  box-shadow: var(--box-shadow);
+  border-radius: .5rem;
+  padding: 10px;
+  height: 30px;
+  width: 150px;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+#bmiImg {
+  display: flex;
+  justify-content: center;
+}
+
+table,
+td {
+  border: 1px solid black;
+  background-color:  var(--green);
+}
+
+thead {
+  background-color: black;
+  color: #fff;
+}
+
+
+
+/* expertiment */
 .about .row{
     display: flex;
     align-items: center;
@@ -284,55 +290,73 @@ thead {
     font-size: 1.5rem;
     line-height: 1.8;
 }
-
-
-
-.book .row{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+/* blog */
+.blogs .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap:2rem;
 }
 
-.book .row .image{
-    flex:1 1 45rem;
-}
-
-.book .row .image img{
-    width: 100%;
-}
-
-.book .row form{
-    flex:1 1 45rem;
-    background: #fff;
+.blogs .box-container .box{
     border:var(--border);
     box-shadow: var(--box-shadow);
-    text-align: center;
+    border-radius: .5rem;
     padding: 2rem;
+}
+
+.blogs .box-container .box .image{
+    height: 20rem;
+    overflow:hidden;
     border-radius: .5rem;
 }
 
-.book .row form h3{
+.blogs .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blogs .box-container .box:hover .image img{
+    transform:scale(1.2);
+}
+
+.blogs .box-container .box .content{
+    padding-top: 1rem;
+}
+
+.blogs .box-container .box .content .icon{
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.blogs .box-container .box .content .icon a{
+    font-size: 1.4rem;
+    color: var(--light-color);
+}
+
+.blogs .box-container .box .content .icon a:hover{
+    color:var(--green);
+}
+
+.blogs .box-container .box .content .icon a i{
+    padding-right: .5rem;
+    color: var(--green);
+}
+
+.blogs .box-container .box .content h3{
     color:var(--black);
-    padding-bottom: 1rem;
     font-size: 3rem;
 }
 
-.book .row form .box{
-    width: 100%;
-    margin:.7rem 0;
-    border-radius: .5rem;
-    border:var(--border);
-    font-size: 1.6rem;
-    color: var(--black);
-    text-transform: none;
-    padding: 1rem;
+.blogs .box-container .box .content p{
+    color:var(--light-color);
+    font-size: 1.5rem;
+    line-height: 1.8;
+    padding:1rem 0;
 }
-
-.book .row form .btn{
-    padding:1rem 4rem;
-}
-
+/* blog */
 
 .footer .box-container{
     display: grid;
