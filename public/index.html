@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 <link
   href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
@@ -18,6 +19,7 @@
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
@@ -62,95 +64,49 @@
 </section>
 
 <!-- home section ends -->
-<section class="bmi" id="bmi">
-  <div class="calculator-name-header">
-      <h1 class="heading"><span>BMI</span>Checker</h1>
-
-      </div>
-      <form class="form-horizontal" id="bMI">
-        <label for="wei">Please enter your weight (in Kgs):</label>
-        <input
-          type="number"
-          name="wei"
-          id="wei"
-          placeholder="Weight"
-        /><br /><br />
-        <label for="hei">Please enter your height (in Centimeter):</label>
-        <input
-          type="number"
-          name="hei"
-          id="hei"
-          placeholder="Height"
-        /><br /><br />
-
-        <button type="button" id="bmiSet" onclick="fun3()">reset</button>
-        <button type="button" onclick="calculateBMI()">Submit</button
-        ><br /><br /><br />
-        <div class="outterbox">
-          <div class="box"><span id="resultBMI"></span></div>
-      </div>
-        <br/>
-        <span id="resultBMImsg"></span><br /><br />
-        <div id="bmiImg"></div>
-      </form>
-</section>
+<!-- bmiwashere -->
 
 <!-- icons section starts  -->
 <!-- icons section ends -->
 
 <!-- services section starts  -->
+<section class="services" id="services">
 
-<section class="blog" id="blog">
-
-    <h1 class="heading"> our <span>services</span> </h1>
+    <h1 class="heading">Health<span>Tracker</span> </h1>
 
     <div class="box-container">
 
         <div class="box">
             <i class="fas fa-notes-medical"></i>
-            <h3>free checkups</h3>
+            <h3>BMI checkup</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            <a href="bmi.html" class="btn"> Calculate <span class="fas fa-chevron-right"></span> </a>
         </div>
-
-        <div class="box">
-            <i class="fas fa-ambulance"></i>
-            <h3>24/7 ambulance</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-user-md"></i>
-            <h3>expert doctors</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
         <div class="box">
             <i class="fas fa-pills"></i>
-            <h3>medicines</h3>
+            <h3>Body Fat </h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            <a href="#" class="btn"> Calculate <span class="fas fa-chevron-right"></span> </a>
         </div>
 
         <div class="box">
             <i class="fas fa-procedures"></i>
-            <h3>bed facility</h3>
+            <h3>Sperm Analysis</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            <a href="#" class="btn"> Calculate <span class="fas fa-chevron-right"></span> </a>
         </div>
 
         <div class="box">
             <i class="fas fa-heartbeat"></i>
-            <h3>total care</h3>
+            <h3>Calorie Calculator</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            <a href="#" class="btn"> Calculate <span class="fas fa-chevron-right"></span> </a>
         </div>
 
     </div>
 
 </section>
+
 
 <!-- services section ends -->
 
@@ -185,29 +141,6 @@
 
 <!-- booking section starts   -->
 
-<section class="book" id="book">
-
-    <h1 class="heading"> <span>book</span> now </h1>
-
-    <div class="row">
-
-        <div class="image">
-            <img src="image/book-img.svg" alt="">
-        </div>
-
-        <form action="">
-            <h3>book appointment</h3>
-            <input type="text" placeholder="your name" class="box">
-            <input type="number" placeholder="your number" class="box">
-            <input type="email" placeholder="your email" class="box">
-            <input type="date" class="box">
-            <input type="submit" value="book now" class="btn">
-        </form>
-
-    </div>
-
-</section>
-
 <!-- booking section ends -->
 
 <!-- review section starts  -->
@@ -216,7 +149,60 @@
 <!-- review section ends -->
 
 <!-- blogs section starts  -->
+<section class="blogs" id="blogs">
 
+    <h1 class="heading"> our <span>blogs</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="image">
+                <img src="image/blog-1.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a href="#"> <i class="fas fa-calendar"></i> 1st may, 2021 </a>
+                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                </div>
+                <h3>Importance of Health</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, eius.</p>
+                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="image/blog-2.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a href="#"> <i class="fas fa-calendar"></i> 1st may, 2021 </a>
+                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                </div>
+                <h3>Food and Nutrition</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, eius.</p>
+                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="image/blog-3.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a href="#"> <i class="fas fa-calendar"></i> 1st may, 2021 </a>
+                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                </div>
+                <h3>Regular Exercise</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, eius.</p>
+                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 <!-- blogs section ends -->
 
 <!-- footer section starts  -->
@@ -248,23 +234,6 @@
 </section>
 
 <!-- footer section ends -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
