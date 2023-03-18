@@ -84,7 +84,7 @@ section:nth-child(even){
 
 .header{
     padding:2rem 9%;
-    position: fixed;
+    position:relative;
     top:0; left: 0; right: 0;
     z-index: 1000;
     box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
@@ -156,7 +156,8 @@ section:nth-child(even){
     line-height: 1.8;
     padding: 1rem 0;
 }
-
+/* home */
+/* **************************************************** */
 /* service */
 .services .box-container{
     display: grid;
@@ -190,8 +191,8 @@ section:nth-child(even){
     line-height: 2;
 }
 /* service */
-
-/* expertiment */
+/* ************************************************ */
+/* BMI */
 .calculator-name-header {
   display: flex;
   justify-content: center;
@@ -209,6 +210,9 @@ label {
   padding-left:20px;
   margin-left: 25px;
 }
+
+
+
 #resultBMI {
   font-size: 2rem;
 }
@@ -255,9 +259,19 @@ thead {
   color: #fff;
 }
 
-
-
-/* expertiment */
+/* BMI end */
+/* *****************************************************/
+/* BodyFat */
+.bodyFatText{
+  font-size: 2.1rem;
+    color: var(--light-color);
+    line-height: 1.8;
+    padding: 1rem 0;
+    display: inline-block;
+}
+/* BodyFat */
+/* ************************************************** */
+/* about */
 .about .row{
     display: flex;
     align-items: center;
@@ -290,6 +304,8 @@ thead {
     font-size: 1.5rem;
     line-height: 1.8;
 }
+/* about */
+/* ************************************************* */
 /* blog */
 .blogs .box-container{
     display: grid;
@@ -357,6 +373,65 @@ thead {
     padding:1rem 0;
 }
 /* blog */
+/* ***************************************************** */
+/* doctor */
+.doctors .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:2rem;
+}
+
+.doctors .box-container .box{
+    text-align: center;
+    background:#fff;
+    border-radius: .5rem;
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    padding:2rem;
+}
+
+.doctors .box-container .box img{
+    height: 20rem;
+    border:var(--border);
+    border-radius: .5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.doctors .box-container .box h3{
+    color:var(--black);
+    font-size: 2.5rem;
+}
+
+.doctors .box-container .box span{
+    color:var(--green);
+    font-size: 1.5rem;
+}
+
+.doctors .box-container .box .share{
+    padding-top: 2rem;
+}
+
+.doctors .box-container .box .share a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    color:var(--green);
+    border-radius: .5rem;
+    border:var(--border);
+    margin:.3rem;
+}
+
+.doctors .box-container .box .share a:hover{
+    background:var(--green);
+    color:#fff;
+    box-shadow: var(--box-shadow);
+}
+
+/* doctor */
+/* ****************************************** */
+/* footer */
 
 .footer .box-container{
     display: grid;
@@ -400,9 +475,8 @@ thead {
     color:var(--green);
 }
 
-
-
-
+/* footer */
+/* ************************************************* */
 /* media queries  */
 @media (max-width:991px){
 
