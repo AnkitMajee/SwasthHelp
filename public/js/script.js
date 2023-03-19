@@ -1,28 +1,3 @@
-let menu = document.querySelector('#menu-btn');
-let navbar = document.querySelector('.navbar');
-
-menu.onclick = () =>{
-    menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
-}
-
-window.onscroll = () =>{
-    menu.classList.remove('fa-times');
-    navbar.classList.remove('active');
-}
-// let menu = document.querySelector('#menu-btn');
-// let navbar = document.querySelector('.navbar');
-//
-// menu.onclick = () =>{
-//     menu.classList.toggle('fa-times');
-//     navbar.classList.toggle('active');
-// }
-//
-// window.onscroll = () =>{
-//     menu.classList.remove('fa-times');
-//     navbar.classList.remove('active');
-// }
-
 const calculateBMI = () => {
   const wei = parseInt(document.getElementById("wei").value);
   const hei = parseInt(document.getElementById("hei").value);
@@ -80,4 +55,8 @@ const calculateBMI = () => {
             </tbody>
           </table>
     `;
+};
+const fun3 =()=>{
+   document.getElementsByName('wei')[0].value = '';
+   document.getElementsByName('hei')[0].value = '';
 };
