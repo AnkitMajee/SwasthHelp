@@ -1,3 +1,4 @@
+//BMI
 const calculateBMI = () => {
   const wei = parseInt(document.getElementById("wei").value);
   const hei = parseInt(document.getElementById("hei").value);
@@ -60,3 +61,28 @@ const fun3 =()=>{
    document.getElementsByName('wei')[0].value = '';
    document.getElementsByName('hei')[0].value = '';
 };
+// BMI ENDS
+// BMR
+function calculateBMR() {
+  var gender = document.getElementById("gender").value;
+  var age = parseInt(document.getElementById("age").value);
+  var height = parseInt(document.getElementById("height").value);
+  var weight = parseInt(document.getElementById("weight").value);
+
+  var bmr;
+  if (gender === "male") {
+    bmr = 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age);
+  } else {
+    bmr = 447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age);
+  }
+
+  document.getElementById("result").innerHTML = bmr.toFixed(2)+" Calories/day";
+}
+const fun4 =()=>{
+   document.getElementsByName('gender')[0].value = '';
+   document.getElementsByName('age')[0].value = '';
+   document.getElementsByName('height')[0].value = '';
+   document.getElementsByName('weight')[0].value = '';
+   document.getElementsByName('bmr')[0].value = '';
+};
+//BMR ENDS
