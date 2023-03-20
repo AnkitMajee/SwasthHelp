@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Body-Fat Calculation Form</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>complete responsive hospital website design </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<link  href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"  rel="stylesheet"/>
+
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"  href="css/result.css">
+    <script>
+        function calculate(){
+            var gndr, age, wght, hgt, nck, wais, hip, bfat;
+            gndr = document.getElementById("gender").value;
+            age = document.getElementById("age").value;
+            wght = document.getElementById("weight").value;
+            hgt = document.getElementById("height").value;
+            nck = document.getElementById("neck").value;
+            wais = document.getElementById("waist").value;
+            hip = document.getElementById("hip").value;
+            if (gndr ==="Male"){
+                bfat =  495/(1.0324-0.19077*(Math.log10(wais-nck))+0.15456*(Math.log10(hgt)))-450;
+            }
+            else{
+                bfat =  495/(1.29579-0.35004*(Math.log10(wais+hip-nck))+0.22100*(Math.log10(hgt)))-450;
+
+            }
+            document.getElementById("result").value="Your Fat : " + bfat.toFixed(2) + "%";
+            if (bfat < 8)
+                document.getElementById("category").value="Elite Athlete";
+            else if (bfat < 14)
+                document.getElementById("category").value="Fitness";
+            else if (bfat < 17)
+                document.getElementById("category").value="Average Athlete";
+            else if (bfat < 24)
+                document.getElementById("category").value="Acceptable";
+            else if (bfat < 31)
+                document.getElementById("category").value="Obese";
+            else
+                document.getElementById("category").value="Extremely Obese";
+        }
+
+        function fun3(){
+          document.getElementsByName('gender')[0].value = '';
+          document.getElementsByName('age')[0].value = '';
+          document.getElementsByName('weight')[0].value = '';
+          document.getElementsByName('height')[0].value = '';
+          document.getElementsByName('neck')[0].value = '';
+          document.getElementsByName('waist')[0].value = '';
+          document.getElementsByName('wei')[0].value = '';
+          document.getElementsByName('hip')[0].value = '';
+        }
+    </script>
+</head>
+<body>
+
+  <!-- header section starts  -->
+
+  <header class="header">
+
+      <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> meDHealth. </a>
+
+      <nav class="navbar">
+          <a href="index.html">home</a>
+      </nav>
+
+      <div id="menu-btn" class="fas fa-bars"></div>
+
+  </header>
+
+<!-- header section ends -->
+
+<!-- Body fat Calculate -->
+<section class="bmi" id="bmi">
+  <div class="calculator-name-header">
+      <h1 class="heading"><span>Body-Fat</span>Checker</h1>
+  </div>
+  <form class="bodyFatText"id="bMI">
+     Please enter your Gender:
+    <input type="radio" name="gender" id="gender"  value="Male"> Male
+    <input type="radio" name="gender" id="gender" value="Female"> Female
+    <br><br>
+    Please enter your Age:<input type="number" name="age" id="age" class="buttonBox">
+    <br><br>
+    Please enter your Weight (kg):<input type="number" name="weight" id="weight" class="buttonBox">
+    <br><br>
+    Please enter your Height (cm):<input type="number" name="height" id="height" class="buttonBox">
+    <br><br>
+    Please enter your Neck (cm):<input type="number" name="neck" id="neck" class="buttonBox">
+    <br><br>
+    Please enter your Waist (cm):<input type="number" name="waist" id="waist" class="buttonBox">
+    <br><br>
+    Please enter your Hip (cm):<input type="number" name="hip" id="hip" class="buttonBox">
+    <br><br>
+    <button class="btn center" type="button" id="bmiSet" onclick="fun3()">reset<span class="fas fa-chevron-right"></span></button>
+    <button class="btn center" type="button" onclick="calculate()">Submit<span class="fas fa-chevron-right"></span></button
+      <br><br>
+    <label>Result:</label><input type="text" class="buttonBox" name="result" id="result" readonly><br><br>
+    <label>Body-Fat Categorization:</label><input type="text" class="buttonBox" name="category" id="category" readonly><br><br>
+    <div id="BodyFatTable"></div>
+  </form>
+  <p>American Council on Exercise Body Fat Categorization</p>
+  <table>
+    <tr>
+      <th>Body-Fat Category</th>
+      <th>Male (% body fat)</th>
+      <th>Female (% body fat)</th>
+    </tr>
+    <tr>
+      <td>Elite Athlete</td>
+      <td>up to 8</td>
+      <td>up to 21</td>
+    </tr>
+    <tr>
+      <td>Fitness</td>
+      <td>8–14</td>
+      <td>21–33</td>
+    </tr>
+    <tr>
+      <td>Athlete</td>
+      <td>14–17</td>
+      <td>33–39</td>
+    </tr>
+    <tr>
+      <td>Acceptable</td>
+      <td>17–24</td>
+      <td>39–47</td>
+    </tr>
+    <tr>
+      <td>Obese</td>
+      <td>24–31</td>
+      <td>47–55</td>
+    </tr>
+    <tr>
+      <td>Extremely Obese</td>
+      <td>above 31</td>
+      <td>above 55</td>
+    </tr>
+  </table>
+</section>
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="index.html"> <i class="fas fa-chevron-right"></i> home </a>
+
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+        </div>
+
+    </div>
+
+    <div class="credit"> created by <span>GDSC AU ❤️</span> | all rights reserved </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
