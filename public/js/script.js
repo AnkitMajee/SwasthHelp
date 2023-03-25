@@ -1,4 +1,18 @@
-//BMI
+
+
+// let menu = document.querySelector('#menu-btn');
+// let navbar = document.querySelector('.navbar');
+//
+// menu.onclick = () =>{
+//     menu.classList.toggle('fa-times');
+//     navbar.classList.toggle('active');
+// }
+//
+// window.onscroll = () =>{
+//     menu.classList.remove('fa-times');
+//     navbar.classList.remove('active');
+// }
+
 const calculateBMI = () => {
   const wei = parseInt(document.getElementById("wei").value);
   const hei = parseInt(document.getElementById("hei").value);
@@ -12,14 +26,60 @@ const calculateBMI = () => {
   document.getElementById("resultBMI").innerHTML = `Your BMI= ${resultBfinal}`;
   if (resultBfinal < 18.5) {
     document.getElementById("resultBMImsg").innerHTML = `You are Underweight`;
+
+    // blog card
+    var blogCard = document.getElementById("blog-card1");
+    if (blogCard.style.display === "none") {
+      blogCard.style.display = "block";
+    } else {
+      blogCard.style.display = "none";
+    }
+    // blog card
   } else if (resultBfinal >= 18.5 && resultBfinal <= 24.99) {
     document.getElementById("resultBMImsg").innerHTML = `You are Normal Weight`;
+
+  // blog card
+  var blogCard = document.getElementById("blog-card2");
+  if (blogCard.style.display === "none") {
+    blogCard.style.display = "block";
+  } else {
+    blogCard.style.display = "none";
+  }
+  // blog card
+
   } else if (resultBfinal >= 25.0 && resultBfinal <= 29.99) {
     document.getElementById("resultBMImsg").innerHTML = `You are Over Weight`;
+
+    // blog card
+    var blogCard = document.getElementById("blog-card3");
+    if (blogCard.style.display === "none") {
+      blogCard.style.display = "block";
+    } else {
+      blogCard.style.display = "none";
+    }
+    // blog card
   } else if (resultBfinal >= 30.0 && resultBfinal <= 40.0) {
     document.getElementById("resultBMImsg").innerHTML = `You are Obese`;
+
+    // blog card
+    var blogCard = document.getElementById("blog-card4");
+    if (blogCard.style.display === "none") {
+      blogCard.style.display = "block";
+    } else {
+      blogCard.style.display = "none";
+    }
+    // blog card
   } else {
     document.getElementById("resultBMImsg").innerHTML = `You are Extreme Obese`;
+
+    // blog card
+    var blogCard = document.getElementById("blog-card5");
+    if (blogCard.style.display === "none") {
+      blogCard.style.display = "block";
+    } else {
+      blogCard.style.display = "none";
+    }
+    // blog card
   }
   document.getElementById("bmiImg").innerHTML = `
     <table border="1" cellpadding="6">
@@ -61,7 +121,7 @@ const fun3 =()=>{
    document.getElementsByName('wei')[0].value = '';
    document.getElementsByName('hei')[0].value = '';
 };
-// BMI ENDS
+
 // BMR
 function calculateBMR() {
   var gender = document.getElementById("gender").value;
@@ -85,4 +145,3 @@ const fun4 =()=>{
    document.getElementsByName('weight')[0].value = '';
    document.getElementsByName('bmr')[0].value = '';
 };
-//BMR ENDS
