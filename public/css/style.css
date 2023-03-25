@@ -59,7 +59,7 @@ section:nth-child(even){
     box-shadow: var(--box-shadow);
     color:var(--green);
     cursor: pointer;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     background: #fff;
 }
 
@@ -211,7 +211,24 @@ label {
   margin-left: 25px;
 }
 
-
+.resultP{
+  font-size: 1.2rem;
+    color: var(--light-color);
+    line-height: 1.;
+    padding: 1rem 0;
+}
+.headingResult span{
+    text-transform: uppercase;
+    color:var(--green);
+}
+.headingResult{
+    text-align: center;
+    padding-bottom: 1.5rem;
+    text-transform: uppercase;
+    color:var(--black);
+    font-size: 1.5rem;
+    letter-spacing: .4rem;
+}
 
 #resultBMI {
   font-size: 2rem;
