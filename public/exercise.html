@@ -1,815 +1,1374 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Excercise and Food</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
 
-    <link  href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"  rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <!-- header section starts  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- header section starts  -->
 
-  <header class="header">
-
+    <header class="header">
       <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> meDHealth. </a>
 
       <nav class="navbar">
-          <a href="index.html">home</a>
+        <a href="index.html">home</a>
       </nav>
 
       <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
 
-  </header>
+    <!-- header section ends -->
 
-<!-- header section ends -->
+    <!-- tabbed section starts -->
 
-<!-- tabbed section starts -->
+    <style>
+      section.tabroot {
+      }
+      div.tabindex {
+        display: flex;
+        width: 100%;
+        max-width: 500px;
+        /* improvised */
+        border-radius: 5px 5px 0 5px;
+        box-shadow: 0.5rem 0.5rem 0 rgba(22, 160, 133, 0.2);
+        overflow-x: auto;
+      }
+      div.tabindex div {
+        margin: auto;
+        padding: 10px;
+        width: 100%;
+        border: var(--border);
+        border-radius: 5px 5px 0 0;
+        border-bottom-width: 0;
+        color: var(--light-color);
+        font-size: 1.4rem;
+        line-height: 2;
+        border-right-width: 0.2px;
+        text-align: center;
+      }
+      div.tabindex #tab-yogasana {
+        width: auto;
+        border-right-width: 0.2px;
+        background-color: var(--green);
+        color: #fff;
+      }
+      div.tabindex #tab-stringex {
+        border-right-width: 1px;
+      }
+      div.tabcontents {
+        border: var(--border);
+        border-radius: 0 0 5px 5px;
+        box-shadow: var(--box-shadow);
+      }
+      div.tabchild {
+        width: 100%;
+      }
+      section.gridview {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      div.tabchild section.gridview div.gridview {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-rows: auto;
+        justify-self: center;
+        grid-gap: 20px; /* even spacing using grid-gap, You can use percentage values if you want*/
+        padding: 20px;
+      }
+      div.tabchild section.gridview div.gridview div.box {
+        padding: 10px;
+        box-shadow: none;
+      }
+      div.tabchild section.gridview div.gridview div.box img {
+        width: calc(100% - 20px);
+        height: auto;
+        padding: 0;
+      }
+      div.tabchild section.gridview div.gridview div.box h3 {
+        font-size: 100%;
+      }
+      #yogasana {
+        display: flex;
+      }
+      #freehand {
+        display: none;
+      }
+      #wtlifting {
+        display: none;
+      }
+      #stringex {
+        display: none;
+      }
+      @media (max-width: 400px) {
+        div.tabchild section.gridview div.gridview {
+          grid-template-columns: repeat(1, calc(100% - 80px));
+          grid-template-rows: auto;
+        }
+      }
+      @media (min-width: 500px) {
+        section.tabroot div.tabcontents {
+          border-radius: 0 5px 5px 5px;
+        }
+      }
+    </style>
 
-<style>
-
-</style>
-
-<section class="tabroot">
-    <h1 class="heading"> exercise <span>tips</span> </h1>
-    <div class="tabindex">
+    <section class="tabroot">
+      <h1 class="heading">exercise <span>tips</span></h1>
+      <div class="tabindex">
         <div class="box" id="tab-yogasana"><span>Yogasana</span></div>
         <div id="tab-freehand">Freehand</div>
         <div id="tab-wtlifting">Weight Lifting</div>
-    </div>
-    <div class="tabcontents">
+        <div id="tab-stringex">String Exercise</div>
+      </div>
+      <div class="tabcontents">
         <div class="tabchild" id="yogasana">
+          <!-- images, YOGASANA stuff STARTS -->
 
-<!-- images, YOGASANA stuff STARTS -->
+          <section class="gridview doctors">
+            <div class="gridview doctors box-container">
+              <div class="box">
+                <img
+                  src="image/Gif/Yogasanas/Adha Mukha Svanasana.jpg"
+                  alt="Image1"
+                />
+                <h3>Adha Mukha Svanasana</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Yogasanas/Akarna_Dhanurasana.jpg"
+                  alt="Image2"
+                />
+                <h3>Akarna_Dhanurasana.jpg</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Yogasanas/Anantasana.jpg" alt="iamge3" />
+                <h3>Anantasana.jpg</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Yogasanas/Anjaneyasana.jpg" alt="iamge4" />
+                <h3>Anjaneyasana.jpg</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Yogasanas/Ardha Chandrasana.jpg"
+                  alt="image5"
+                />
+                <h3>Ardha Chandrasana.jpg</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Yogasanas/Ashtanga Namaskara.jpg"
+                  alt="image6"
+                />
+                <h3>Ashtanga Namaskara.jpg</h3>
+              </div>
+            </div>
+          </section>
 
-<section class="gridview doctors">
-    <div class="gridview doctors box-container">
-        <div class="box">
-            <img src="image/Gif/Yogasanas/Adha Mukha Svanasana.jpg" alt="Image1">
-            <h3>Adha Mukha Svanasana</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Yogasanas/Akarna_Dhanurasana.jpg" alt="Image2">
-            <h3>Akarna_Dhanurasana.jpg</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Yogasanas/Anantasana.jpg" alt="iamge3">
-            <h3>Anantasana.jpg</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Yogasanas/Anjaneyasana.jpg" alt="iamge4">
-            <h3>Anjaneyasana.jpg</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Yogasanas/Ardha Chandrasana.jpg" alt="image5">
-            <h3>Ardha Chandrasana.jpg</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Yogasanas/Ashtanga Namaskara.jpg" alt="image6">
-            <h3>Ashtanga Namaskara.jpg</h3>
-        </div>
-    </div>
-</section>
-
-<!-- images, YOGASANA stuff ENDS -->
-
+          <!-- images, YOGASANA stuff ENDS -->
         </div>
         <div class="tabchild" id="freehand">
+          <!-- images, FREEHAND stuff STARTS -->
 
-<!-- images, FREEHAND stuff STARTS -->
+          <section class="gridview doctors">
+            <div class="gridview doctors box-container">
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/9 Exercises You Can Do While Sitting Down.gif"
+                  alt="Image1"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Alternating Side Lunge Touch _ Illustrated Exercise Guide.gif"
+                  alt="Image2"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Arms Cross Side Lunge _ Illustrated Exercise Guide.gif"
+                  alt="iamge3"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Biceps Stretch _ Illustrated Exercise Guide.gif"
+                  alt="iamge4"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/bil oefeningen - FITNESSSCHEMAS_NL (19).gif"
+                  alt="image5"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/bil oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/buik bovenkant oefeningen - FITNESSSCHEMAS_NL (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/buik bovenkant oefeningen - FITNESSSCHEMAS_NL (2).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/buik bovenkant oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/buik onderkant oefeningen - FITNESSSCHEMAS_NL (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/buik onderkant oefeningen - FITNESSSCHEMAS_NL (2).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/buik onderkant oefeningen - FITNESSSCHEMAS_NL (3).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/buik onderkant oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/buik zijkant oefeningen - FITNESSSCHEMAS_NL (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/buik zijkant oefeningen - FITNESSSCHEMAS_NL (2).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/buik zijkant oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Free_Hand/Chin ups.gif" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (4).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (5).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (6).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (7).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (9).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (10).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (11).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (12).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (13).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (14).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (15).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (16).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (17).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (18).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Free_Hand/HWix.gif" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Free_Hand/Jumping Jacks.gif" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Knee Hugs _ Illustrated Exercise Guide.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Lateral Step Pull _ Illustrated Exercise Guide.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Lying Side Crunch _ Illustrated Exercise Guide.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Onderkant borst oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/onderkant rug oefeningen - FITNESSSCHEMAS_NL (4).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/onderkant rug oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Pike Push Up _ Illustrated Exercise Guide.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Plank Jacks _ Illustrated Exercise Guide.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Free_Hand/Pushups.webp" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Free_Hand/Pushups1.webp" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Free_Hand/Pushups2.webp" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Free_Hand/Pushups3.webp" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Reverse Lunge Medicine Ball Overhead Press _ Illustrated Exercise Guide.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Run In Place _ Illustrated Exercise Guide.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Shoulder Squeeze Reverse Lunge _ Illustrated Exercise Guide.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Free_Hand/Situps.webp" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Free_Hand/Situps1.gif" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Free_Hand/Skipping.gif" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Spiderman Plank _ Illustrated Exercise Guide.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/T Press _ Illustrated Exercise Guide.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/The Best Exercises - GIFs.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Free_Hand/Treadmill.gif" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Free_Hand/Windshield Wipers _ Illustrated Exercise Guide.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+            </div>
+          </section>
 
-<section class="gridview doctors">
-    <div class="gridview doctors box-container">
-        <div class="box">
-            <img src="image/Gif/Free_Hand/9 Exercises You Can Do While Sitting Down.gif" alt="Image1">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Alternating Side Lunge Touch _ Illustrated Exercise Guide.gif" alt="Image2">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Arms Cross Side Lunge _ Illustrated Exercise Guide.gif" alt="iamge3">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Biceps Stretch _ Illustrated Exercise Guide.gif" alt="iamge4">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/bil oefeningen - FITNESSSCHEMAS_NL (19).gif" alt="image5">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/bil oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/buik bovenkant oefeningen - FITNESSSCHEMAS_NL (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/buik bovenkant oefeningen - FITNESSSCHEMAS_NL (2).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/buik bovenkant oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/buik onderkant oefeningen - FITNESSSCHEMAS_NL (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/buik onderkant oefeningen - FITNESSSCHEMAS_NL (2).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/buik onderkant oefeningen - FITNESSSCHEMAS_NL (3).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/buik onderkant oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/buik zijkant oefeningen - FITNESSSCHEMAS_NL (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/buik zijkant oefeningen - FITNESSSCHEMAS_NL (2).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/buik zijkant oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Chin ups.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (4).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (5).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (6).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (7).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (9).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (10).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (11).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (12).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (13).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (14).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (15).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (16).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (17).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (18).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/HWix.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Jumping Jacks.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Knee Hugs _ Illustrated Exercise Guide.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Lateral Step Pull _ Illustrated Exercise Guide.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Lying Side Crunch _ Illustrated Exercise Guide.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Onderkant borst oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/onderkant rug oefeningen - FITNESSSCHEMAS_NL (4).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/onderkant rug oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Pike Push Up _ Illustrated Exercise Guide.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Plank Jacks _ Illustrated Exercise Guide.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Pushups.webp" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Pushups1.webp" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Pushups2.webp" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Pushups3.webp" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Reverse Lunge Medicine Ball Overhead Press _ Illustrated Exercise Guide.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Run In Place _ Illustrated Exercise Guide.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Shoulder Squeeze Reverse Lunge _ Illustrated Exercise Guide.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Situps.webp" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Situps1.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Skipping.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Spiderman Plank _ Illustrated Exercise Guide.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/T Press _ Illustrated Exercise Guide.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/The Best Exercises - GIFs.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Treadmill.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Free_Hand/Windshield Wipers _ Illustrated Exercise Guide.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-
-    </div>
-</section>
-
-<!-- images, FREEHAND stuff ENDS -->
-
+          <!-- images, FREEHAND stuff ENDS -->
         </div>
         <div class="tabchild" id="wtlifting">
+          <!-- images, WEIGHT LIFTING stuff STARTS -->
 
-<!-- images, WEIGHT LIFTING stuff STARTS -->
+          <section class="gridview doctors">
+            <div class="gridview doctors box-container">
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/achterkant schouders oefeningen - FITNESSSCHEMAS_NL (2).gif"
+                  alt="Image1"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/achterkant schouders oefeningen - FITNESSSCHEMAS_NL (5).gif"
+                  alt="Image2"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/achterkant schouders oefeningen - FITNESSSCHEMAS_NL (6).gif"
+                  alt="iamge3"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/achterkant schouders oefeningen - FITNESSSCHEMAS_NL (8).gif"
+                  alt="iamge4"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/achterkant schouders oefeningen - FITNESSSCHEMAS_NL (9).gif"
+                  alt="image5"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/achterkant schouders oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
 
-<section class="gridview doctors">
-    <div class="gridview doctors box-container">
-        <div class="box">
-            <img src="image/Gif/Weight/achterkant schouders oefeningen - FITNESSSCHEMAS_NL (2).gif" alt="Image1">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/achterkant schouders oefeningen - FITNESSSCHEMAS_NL (5).gif" alt="Image2">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/achterkant schouders oefeningen - FITNESSSCHEMAS_NL (6).gif" alt="iamge3">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/achterkant schouders oefeningen - FITNESSSCHEMAS_NL (8).gif" alt="iamge4">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/achterkant schouders oefeningen - FITNESSSCHEMAS_NL (9).gif" alt="image5">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/achterkant schouders oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
+              <div class="box">
+                <img src="image/Gif/Weight/Back.gif" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (10).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (2).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (3).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (5).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (6).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (7).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (9).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (10).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (2).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (3).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (4).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (6).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (7).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (10).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (11).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (12).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (14).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (16).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (18).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (20).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (21).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bovenkant borst oefeningen - FITNESSSCHEMAS_NL (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bovenkant borst oefeningen - FITNESSSCHEMAS_NL (3).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bovenkant borst oefeningen - FITNESSSCHEMAS_NL (4).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bovenkant borst oefeningen - FITNESSSCHEMAS_NL (5).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bovenkant borst oefeningen - FITNESSSCHEMAS_NL (8).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bovenkant borst oefeningen - FITNESSSCHEMAS_NL (9).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/bovenkant rug oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/buik bovenkant oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/buik onderkant oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Weight/Chest_Flies.gif" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Weight/Front.gif" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (2).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (3).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (5).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (6).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (7).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (8).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/kuit oefeningen - FITNESSSCHEMAS_NL (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/kuit oefeningen - FITNESSSCHEMAS_NL (4).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/kuit oefeningen - FITNESSSCHEMAS_NL (5).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Weight/let's go___.gif" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/middenstuk rug oefeningen - FITNESSSCHEMAS_NL (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/middenstuk rug oefeningen - FITNESSSCHEMAS_NL (2).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/middenstuk rug oefeningen - FITNESSSCHEMAS_NL (6).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/middenstuk rug oefeningen - FITNESSSCHEMAS_NL (7).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/middenstuk rug oefeningen - FITNESSSCHEMAS_NL (8).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/middenstuk rug oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Onderarm oefeningen - FITNESSSCHEMAS_NL (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Onderarm oefeningen - FITNESSSCHEMAS_NL (2).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Onderarm oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Onderkant borst oefeningen - FITNESSSCHEMAS_NL (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Onderkant borst oefeningen - FITNESSSCHEMAS_NL (2).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Onderkant borst oefeningen - FITNESSSCHEMAS_NL (3).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Onderkant borst oefeningen - FITNESSSCHEMAS_NL (4).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/Onderkant borst oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/onderkant rug oefeningen - FITNESSSCHEMAS_NL (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/onderkant rug oefeningen - FITNESSSCHEMAS_NL (2).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/onderkant rug oefeningen - FITNESSSCHEMAS_NL (3).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (2).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (3).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (4).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (5).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (6).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (7).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (9).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (12).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (14).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (2).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (3).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (4).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (5).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (6).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (7).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (8).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (10).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (11).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (12).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL.gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="image/Gif/Weight/Workout part II.gif" alt="image6" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/zijkant schouders oefeningen - FITNESSSCHEMAS_NL (1).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/zijkant schouders oefeningen - FITNESSSCHEMAS_NL (3).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/zijkant schouders oefeningen - FITNESSSCHEMAS_NL (4).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img
+                  src="image/Gif/Weight/zijkant schouders oefeningen - FITNESSSCHEMAS_NL (6).gif"
+                  alt="image6"
+                />
+                <h3>put image</h3>
+              </div>
+            </div>
+          </section>
 
-        <div class="box">
-            <img src="image/Gif/Weight/Back.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (10).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (2).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (3).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (5).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (6).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (7).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (9).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL (10).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/biceps oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (2).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (3).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (4).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (6).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (7).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (10).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (11).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (12).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (14).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (16).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (18).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (20).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL (21).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bil oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bovenkant borst oefeningen - FITNESSSCHEMAS_NL (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bovenkant borst oefeningen - FITNESSSCHEMAS_NL (3).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bovenkant borst oefeningen - FITNESSSCHEMAS_NL (4).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bovenkant borst oefeningen - FITNESSSCHEMAS_NL (5).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bovenkant borst oefeningen - FITNESSSCHEMAS_NL (8).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bovenkant borst oefeningen - FITNESSSCHEMAS_NL (9).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/bovenkant rug oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/buik bovenkant oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/buik onderkant oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Chest_Flies.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Front.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (2).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (3).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (5).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (6).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (7).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion (8).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Full Leg & Glute Workouts by TheMillionFV-GYM - Dailymotion.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/kuit oefeningen - FITNESSSCHEMAS_NL (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/kuit oefeningen - FITNESSSCHEMAS_NL (4).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/kuit oefeningen - FITNESSSCHEMAS_NL (5).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/let's go___.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/middenstuk rug oefeningen - FITNESSSCHEMAS_NL (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/middenstuk rug oefeningen - FITNESSSCHEMAS_NL (2).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/middenstuk rug oefeningen - FITNESSSCHEMAS_NL (6).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/middenstuk rug oefeningen - FITNESSSCHEMAS_NL (7).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/middenstuk rug oefeningen - FITNESSSCHEMAS_NL (8).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/middenstuk rug oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Onderarm oefeningen - FITNESSSCHEMAS_NL (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Onderarm oefeningen - FITNESSSCHEMAS_NL (2).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Onderarm oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Onderkant borst oefeningen - FITNESSSCHEMAS_NL (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Onderkant borst oefeningen - FITNESSSCHEMAS_NL (2).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Onderkant borst oefeningen - FITNESSSCHEMAS_NL (3).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Onderkant borst oefeningen - FITNESSSCHEMAS_NL (4).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Onderkant borst oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/onderkant rug oefeningen - FITNESSSCHEMAS_NL (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/onderkant rug oefeningen - FITNESSSCHEMAS_NL (2).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/onderkant rug oefeningen - FITNESSSCHEMAS_NL (3).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (2).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (3).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (4).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (5).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (6).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (7).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (9).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (12).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/triceps oefeningen - FITNESSSCHEMAS_NL (14).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (2).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (3).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (4).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (5).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (6).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (7).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (8).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (10).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (11).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL (12).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/voorkant schouders oefeningen - FITNESSSCHEMAS_NL.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/Workout part II.gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/zijkant schouders oefeningen - FITNESSSCHEMAS_NL (1).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/zijkant schouders oefeningen - FITNESSSCHEMAS_NL (3).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/zijkant schouders oefeningen - FITNESSSCHEMAS_NL (4).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
-        <div class="box">
-            <img src="image/Gif/Weight/zijkant schouders oefeningen - FITNESSSCHEMAS_NL (6).gif" alt="image6">
-            <h3>put image</h3>
-        </div>
+          <!-- images, WEIGHT LIFTING stuff ENDS -->
+        </div>
+        <div class="tabchild" id="stringex">
+          <!-- images, stringex stuff STARTS -->
+          <section class="gridview doctors">
+            <div class="gridview doctors box-container">
+              <div class="box">
+                <img src="#" alt="Image1" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="#" alt="Image2" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="#" alt="iamge3" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="#" alt="iamge4" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="#" alt="image5" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="#" alt="image6" />
+                <h3>put image</h3>
+              </div>
+            </div>
+          </section>
 
-    </div>
-</section>
-
-<!-- images, WEIGHT LIFTING stuff ENDS -->
-
+          <!-- images, stringex stuff ENDS -->
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<script>
-    const yogasana = document.getElementById('yogasana');
-    const freehand = document.getElementById('freehand');
-    const wtlifting = document.getElementById('wtlifting');
-    const tablist = {
-        'yogasana': document.getElementById('tab-yogasana'),
-        'freehand': document.getElementById('tab-freehand'),
-        'wtlifting': document.getElementById('tab-wtlifting'),
-    };
-    const VISIBLE = 'flex',
-          INVISIBLE = 'none';
-    const GREEN_ACTIVE = '#16a085',
-          DEFAULT_BLACK = '#444444',
-          DEFAULT_INACTIVE = '#fff';
-    const switchTab = (tabs, activate=tabs[0]) => {
+    <script>
+      const yogasana = document.getElementById("yogasana");
+      const freehand = document.getElementById("freehand");
+      const wtlifting = document.getElementById("wtlifting");
+      const stringex = document.getElementById("stringex");
+      const tablist = {
+        yogasana: document.getElementById("tab-yogasana"),
+        freehand: document.getElementById("tab-freehand"),
+        wtlifting: document.getElementById("tab-wtlifting"),
+        stringex: document.getElementById("tab-stringex"),
+      };
+      const VISIBLE = "flex",
+        INVISIBLE = "none";
+      const GREEN_ACTIVE = "#16a085",
+        DEFAULT_BLACK = "#444444",
+        DEFAULT_INACTIVE = "#fff";
+      const switchTab = (tabs, activate = tabs[0]) => {
         for (let tab of tabs) {
-            if (activate === tab) {
-                tab.style.display = VISIBLE;
-                tablist[tab.id].style.color = DEFAULT_INACTIVE;
-                tablist[tab.id].style.backgroundColor = GREEN_ACTIVE;
-            } else {
-                tab.style.display = INVISIBLE;
-                tablist[tab.id].style.color = DEFAULT_BLACK;
-                tablist[tab.id].style.backgroundColor = DEFAULT_INACTIVE;
-            }
+          if (activate === tab) {
+            tab.style.display = VISIBLE;
+            tablist[tab.id].style.color = DEFAULT_INACTIVE;
+            tablist[tab.id].style.backgroundColor = GREEN_ACTIVE;
+          } else {
+            tab.style.display = INVISIBLE;
+            tablist[tab.id].style.color = DEFAULT_BLACK;
+            tablist[tab.id].style.backgroundColor = DEFAULT_INACTIVE;
+          }
         }
-    };
-    tablist.yogasana.addEventListener('click', (e) => {
-        switchTab([ yogasana, freehand, wtlifting ], yogasana);
-    });
-    tablist.freehand.addEventListener('click', (e) => {
-        switchTab([ yogasana, freehand, wtlifting ], freehand);
-    });
-    tablist.wtlifting.addEventListener('click', (e) => {
-        switchTab([ yogasana, freehand, wtlifting ], wtlifting);
-    });
-</script>
+      };
+      tablist.yogasana.addEventListener("click", (e) => {
+        switchTab([yogasana, freehand, wtlifting, stringex], yogasana);
+      });
+      tablist.freehand.addEventListener("click", (e) => {
+        switchTab([yogasana, freehand, wtlifting, stringex], freehand);
+      });
+      tablist.wtlifting.addEventListener("click", (e) => {
+        switchTab([yogasana, freehand, wtlifting, stringex], wtlifting);
+      });
+      tablist.stringex.addEventListener("click", (e) => {
+        switchTab([yogasana, freehand, wtlifting, stringex], stringex);
+      });
+    </script>
 
-<!-- tabbed section ends -->
+    <!-- tabbed section ends -->
 
-<!-- footer section starts  -->
+    <!-- footer section starts  -->
 
-<section class="footer">
-
-    <div class="box-container">
-
+    <section class="footer">
+      <div class="box-container">
         <div class="box">
-            <h3>quick links</h3>
-            <a href="index.html"> <i class="fas fa-chevron-right"></i> home </a>
-
+          <h3>quick links</h3>
+          <a href="index.html"> <i class="fas fa-chevron-right"></i> home </a>
         </div>
 
         <div class="box">
-            <h3>follow us</h3>
-            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
-            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
-            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+          <h3>follow us</h3>
+          <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+          <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+          <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+          <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
         </div>
+      </div>
 
-    </div>
+      <div class="credit">
+        created by <span>GDSC AU ❤️</span> | all rights reserved
+      </div>
+    </section>
 
-    <div class="credit"> created by <span>GDSC AU ❤️</span> | all rights reserved </div>
+    <!-- footer section ends -->
 
-</section>
-
-<!-- footer section ends -->
-
-<!-- custom js file link  -->
-<script src="js/script.js"></script>
-
-</body>
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+  </body>
 </html>
