@@ -82,7 +82,7 @@ const calculateBMI = () => {
     // blog card
   }
   document.getElementById("bmiImg").innerHTML = `
-    <table border="1" cellpadding="6">
+    <table class="ResultTable" border="1" cellpadding="6">
             <thead>
               <tr>
                 <th colspan="6">BODY MASS INDEX (BMI)</th>
