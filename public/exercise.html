@@ -54,34 +54,49 @@
       section.tabroot {
       }
       div.tabindex {
-        display: flex;
-        width: 100%;
-        max-width: 500px;
-        /* improvised */
-        border-radius: 5px 5px 0 5px;
-        box-shadow: 0.5rem 0.5rem 0 rgba(22, 160, 133, 0.2);
+        padding: 0;
+        margin: 0;
+        max-width: 461px; /* custom set for exercise.html specifically, DO NOT CHANGE FOR exercise.html */
         overflow-x: auto;
-      }
-      div.tabindex div {
-        margin: auto;
-        padding: 10px;
-        width: 100%;
-        border: var(--border);
         border-radius: 5px 5px 0 0;
-        border-bottom-width: 0;
-        color: var(--light-color);
+        box-shadow: var(--box-shadow);
+        /* improvised */
+      }
+      div.tabindex div.subcontainer {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        overflow-x: auto;
+        border-radius: 0;
+        box-shadow: 0.5rem 0.5rem 0 rgba(22, 160, 133, 0.2);
+        /* hide scrollbar */
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      /* hide scrollbar on webkit */
+      div.tabindex div.subcontainer::-webkit-scrollbar {
+        display: none;
+      }
+      div.tabindex div.subcontainer div.tab {
+        padding: 7px 20px;
         font-size: 1.4rem;
+        white-space: nowrap;
         line-height: 2;
+        margin: 0 auto 0;
+        border: var(--border);
+        color: var(--light-color);
+        border-bottom-width: 0;
+        border-radius: 5px 5px 0 0;
         border-right-width: 0.2px;
         text-align: center;
       }
-      div.tabindex #tab-yogasana {
+      #tab-yogasana {
         width: auto;
         border-right-width: 0.2px;
         background-color: var(--green);
         color: #fff;
       }
-      div.tabindex #tab-stringex {
+      #tab-stringex {
         border-right-width: 1px;
       }
       div.tabcontents {
@@ -145,10 +160,12 @@
     <section class="tabroot">
       <h1 class="heading">exercise <span>tips</span></h1>
       <div class="tabindex">
-        <div class="box" id="tab-yogasana"><span>Yogasana</span></div>
-        <div id="tab-freehand">Freehand</div>
-        <div id="tab-wtlifting">Weight Lifting</div>
-        <div id="tab-stringex">String Exercise</div>
+        <div class="subcontainer">
+          <div class="tab" id="tab-yogasana">Yogasana</div>
+          <div class="tab" id="tab-freehand">Freehand</div>
+          <div class="tab" id="tab-wtlifting">Weight Lifting</div>
+          <div class="tab" id="tab-stringex">String Exercise</div>
+        </div>
       </div>
       <div class="tabcontents">
         <div class="tabchild" id="yogasana">
