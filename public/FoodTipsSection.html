@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sections Template</title>
+    <title>Excercise and Food</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -32,7 +32,7 @@
       div.tabindex {
         padding: 0;
         margin: 0;
-        max-width: 500px;
+        max-width: 547px;
         overflow-x: auto;
         border-radius: 5px 5px 0 0;
         box-shadow: var(--box-shadow);
@@ -54,7 +54,6 @@
         display: none;
       }
       div.tabindex div.subcontainer div.tab {
-        width: 100%;    /* custom added for this specific page: sections.html */
         padding: 7px 20px;
         font-size: 1.4rem;
         white-space: nowrap;
@@ -67,11 +66,11 @@
         border-right-width: 0.2px;
         text-align: center;
       }
-      #tab-yogasana {
+      #tab-cereals {
         background-color: var(--green);
         color: #fff;
       }
-      #tab-freehand {
+      #tab-vegetables {
         border-right-width: 1px;
       }
       div.tabcontents {
@@ -113,13 +112,19 @@
       div.tabchild section.gridview div.gridview div.box h3 {
         font-size: 100%;
       }
-      #yogasana {
+      #cereals {
         display: flex;
       }
-      #freehand {
+      #fruits {
         display: none;
       }
-      #wtlifting {
+      #dairy {
+        display: none;
+      }
+      #seafoods {
+        display: none;
+      }
+      #vegetables {
         display: none;
       }
       @media (max-width: 400px) {
@@ -135,23 +140,21 @@
       }
     </style>
     <section class="tabroot">
-      <h1 class="heading">Sections <span>Template</span></h1>
+      <h1 class="heading">food <span>tips</span></h1>
       <div class="tabindex">
         <div class="subcontainer">
-          <div class="tab" id="tab-yogasana">Yogasana</div>
-          <div class="tab" id="tab-freehand">Freehand</div>
-          <div class="tab" id="tab-wtlifting">Weight Lifting</div>
+          <div class="tab" id="tab-cereals">Bread & Cereals</div>
+          <div class="tab" id="tab-fruits">Fruits</div>
+          <div class="tab" id="tab-dairy">Milk & Dairy</div>
+          <div class="tab" id="tab-seafoods">Sea Foods</div>
+          <div class="tab" id="tab-vegetables">Vegetables</div>
         </div>
       </div>
       <div class="tabcontents">
-        <div class="tabchild" id="yogasana">
-          <!-- images, YOGASANA stuff STARTS -->
+        <div class="tabchild" id="cereals">
+          <!-- images, cereals stuff STARTS -->
           <section class="gridview doctors">
             <div class="gridview doctors box-container">
-              <div class="box">
-                <img src="#" alt="Image1" />
-                <h3>put image</h3>
-              </div>
               <div class="box">
                 <img src="#" alt="Image2" />
                 <h3>put image</h3>
@@ -173,11 +176,12 @@
                 <h3>put image</h3>
               </div>
             </div>
+            <img class="infotable" src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc" />
           </section>
-          <!-- images, YOGASANA stuff ENDS -->
+          <!-- images, cereals stuff ENDS -->
         </div>
-        <div class="tabchild" id="freehand">
-          <!-- images, FREEHAND stuff STARTS -->
+        <div class="tabchild" id="fruits">
+          <!-- images, fruits stuff STARTS -->
           <section class="gridview doctors">
             <div class="gridview doctors box-container">
               <div class="box">
@@ -205,11 +209,41 @@
                 <h3>put image</h3>
               </div>
             </div>
+            <img class="infotable" src="#" />
           </section>
-          <!-- images, FREEHAND stuff ENDS -->
+          <!-- images, fruits stuff ENDS -->
         </div>
-        <div class="tabchild" id="wtlifting">
-          <!-- images, WEIGHT LIFTING stuff STARTS -->
+        <div class="tabchild" id="dairy">
+          <!-- images, dairy stuff STARTS -->
+          <section class="gridview doctors">
+            <div class="gridview doctors box-container">
+              <div class="box">
+                <img src="#" alt="Image2" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="#" alt="iamge3" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="#" alt="iamge4" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="#" alt="image5" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="#" alt="image6" />
+                <h3>put image</h3>
+              </div>
+            </div>
+            <img class="infotable" src="#" />
+          </section>
+          <!-- images, dairy stuff ENDS -->
+        </div>
+        <div class="tabchild" id="seafoods">
+          <!-- images, seafoods stuff STARTS -->
           <section class="gridview doctors">
             <div class="gridview doctors box-container">
               <div class="box">
@@ -237,19 +271,53 @@
                 <h3>put image</h3>
               </div>
             </div>
+            <img class="infotable" src="#" />
           </section>
-          <!-- images, WEIGHT LIFTING stuff ENDS -->
+          <!-- images, seafoods stuff ENDS -->
+        </div>
+        <div class="tabchild" id="vegetables">
+          <!-- images, vegetables stuff STARTS -->
+          <section class="gridview doctors">
+            <div class="gridview doctors box-container">
+              <div class="box">
+                <img src="#" alt="Image2" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="#" alt="iamge3" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="#" alt="iamge4" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="#" alt="image5" />
+                <h3>put image</h3>
+              </div>
+              <div class="box">
+                <img src="#" alt="image6" />
+                <h3>put image</h3>
+              </div>
+            </div>
+            <img class="infotable" src="#" />
+          </section>
+          <!-- images, vegetables stuff ENDS -->
         </div>
       </div>
     </section>
     <script>
-      const yogasana = document.getElementById("yogasana");
-      const freehand = document.getElementById("freehand");
-      const wtlifting = document.getElementById("wtlifting");
+      const cereals = document.getElementById("cereals");
+      const fruits = document.getElementById("fruits");
+      const dairy = document.getElementById("dairy");
+      const seafoods = document.getElementById("seafoods");
+      const vegetables = document.getElementById("vegetables");
       const tablist = {
-        yogasana: document.getElementById("tab-yogasana"),
-        freehand: document.getElementById("tab-freehand"),
-        wtlifting: document.getElementById("tab-wtlifting"),
+        cereals: document.getElementById("tab-cereals"),
+        fruits: document.getElementById("tab-fruits"),
+        dairy: document.getElementById("tab-dairy"),
+        seafoods: document.getElementById("tab-seafoods"),
+        vegetables: document.getElementById("tab-vegetables"),
       };
       const VISIBLE = "flex",
         INVISIBLE = "none";
@@ -269,14 +337,20 @@
           }
         }
       };
-      tablist.yogasana.addEventListener("click", (e) => {
-        switchTab([yogasana, freehand, wtlifting], yogasana);
+      tablist.cereals.addEventListener("click", (e) => {
+        switchTab([cereals, fruits, dairy, seafoods, vegetables], cereals);
       });
-      tablist.freehand.addEventListener("click", (e) => {
-        switchTab([yogasana, freehand, wtlifting], freehand);
+      tablist.fruits.addEventListener("click", (e) => {
+        switchTab([cereals, fruits, dairy, seafoods, vegetables], fruits);
       });
-      tablist.wtlifting.addEventListener("click", (e) => {
-        switchTab([yogasana, freehand, wtlifting], wtlifting);
+      tablist.dairy.addEventListener("click", (e) => {
+        switchTab([cereals, fruits, dairy, seafoods, vegetables], dairy);
+      });
+      tablist.seafoods.addEventListener("click", (e) => {
+        switchTab([cereals, fruits, dairy, seafoods, vegetables], seafoods);
+      });
+      tablist.vegetables.addEventListener("click", (e) => {
+        switchTab([cereals, fruits, dairy, seafoods, vegetables], vegetables);
       });
     </script>
     <!-- tabbed section ends -->
