@@ -160,7 +160,7 @@ section:nth-child(even){
   font-size: 2rem;
   color:var(--black);
   line-height: 0.90;
-  text-shadow: var(--text-shadow);
+
 }
 
 .home .content p{
@@ -242,7 +242,10 @@ label {
     font-size: 1.5rem;
     letter-spacing: .4rem;
 }
-
+.ResultTable{
+  width: 300px;
+  height: 200px;
+}
 #resultBMI {
   font-size: 2rem;
 }
@@ -305,7 +308,7 @@ box-shadow: var(--box-shadow);
 border-radius: 0.5rem;
 padding: 10px;
 height: 30px;
-width: 150px;
+width: 200px;
 font-size: 18px;
 margin-left: 5px;
 }
