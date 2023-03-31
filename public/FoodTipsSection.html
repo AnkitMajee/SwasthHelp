@@ -41,7 +41,8 @@
     <!-- header section ends -->
     <!-- tabbed section starts -->
     <style>
-      section.tabroot {
+      section.tabroot img {
+        width: 100%;
       }
       div.tabindex {
         padding: 0;
@@ -110,10 +111,23 @@
         grid-gap: 20px; /* even spacing using grid-gap, You can use percentage values if you want*/
         padding: 20px;
       }
-      div.tabchild section.gridview img.infotable {
+      div.tabchild section.gridview div.infotable {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-rows: auto;
+        justify-self: center;
+        grid-gap: 20px; /* even spacing using grid-gap, You can use percentage values if you want*/
+        padding: 0;
+        /* wtf? */
         margin: 20px auto;
         margin-top: 5px;
         width: calc(100% - 40px);
+      }
+      div.tabchild section.gridview .infotab-heading {
+        padding-left: 10px;
+      }
+      div.tabchild section.gridview div.infotable .document {
+        border-radius: 5px;
       }
       div.tabchild section.gridview div.gridview div.box {
         padding: 10px;
@@ -152,6 +166,10 @@
           grid-template-columns: repeat(1, calc(100% - 80px));
           grid-template-rows: auto;
         }
+        div.tabchild section.gridview div.infotable {
+          grid-template-columns: repeat(2, calc(100% - 80px));
+          grid-template-rows: auto;
+        }
       }
       @media (min-width: 500px) {
         section.tabroot div.tabcontents {
@@ -174,6 +192,11 @@
         <div class="tabchild" id="cereals">
           <!-- images, cereals stuff STARTS -->
           <section class="gridview doctors">
+           <h1 class="infotab-heading">Food Charts</h1>
+            <div class="infotable">
+              <iframe class="document" src="https://docs.google.com/gview?url=https://github.com/AnkitMajee/SwasthHelp/blob/Hirimba/Resources/Food/Fruits/Fruits.pdf?raw=true&embedded=true" style="width:100%; height: 400px;" frameborder="0"></iframe>
+              <iframe class="document" src="https://docs.google.com/gview?url=https://github.com/AnkitMajee/SwasthHelp/blob/Hirimba/Resources/Food/Fruits/Fruits.pdf?raw=true&embedded=true" style="width:100%; height: 400px;" frameborder="0"></iframe>
+            </div>
             <div class="gridview doctors box-container">
               <div class="box">
                 <img
@@ -351,11 +374,6 @@
                 <h3>Boiled Spaghetti</h3>
               </div>
             </div>
-            <img
-              class="infotable"
-              alt="Amity Blight"
-              src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc"
-            />
           </section>
           <!-- images, cereals stuff ENDS -->
         </div>
@@ -600,11 +618,11 @@
                 <h3>Woodapple</h3>
               </div>
             </div>
-            <img
-              class="infotable"
-              alt="Amity Blight"
-              src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc"
-            />
+           <h1 class="infotab-heading">Food Charts</h1>
+            <div class="infotable">
+              <img class="document" alt="Amity Blight"
+                   src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc" />
+            </div>
           </section>
           <!-- images, fruits stuff ENDS -->
         </div>
@@ -774,11 +792,11 @@
                 <h3>Yogurt reduced fat</h3>
               </div>
             </div>
-            <img
-              class="infotable"
-              alt="Amity Blight"
-              src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc"
-            />
+           <h1 class="infotab-heading">Food Charts</h1>
+            <div class="infotable">
+              <img class="document" alt="Amity Blight"
+                   src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc" />
+            </div>
           </section>
           <!-- images, dairy stuff ENDS -->
         </div>
@@ -873,11 +891,11 @@
                 <h3>Tuna</h3>
               </div>
             </div>
-            <img
-              class="infotable"
-              alt="Amity Blight"
-              src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc"
-            />
+           <h1 class="infotab-heading">Food Charts</h1>
+            <div class="infotable">
+              <img class="document" alt="Amity Blight"
+                   src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc" />
+            </div>
           </section>
           <!-- images, seafoods stuff ENDS -->
         </div>
@@ -1146,11 +1164,11 @@
                 <h3>Zucchini</h3>
               </div>
             </div>
-            <img
-              class="infotable"
-              alt="Amity Blight"
-              src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc"
-            />
+           <h1 class="infotab-heading">Food Charts</h1>
+            <div class="infotable">
+              <img class="document" alt="Amity Blight"
+                   src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc" />
+            </div>
           </section>
           <!-- images, vegetables stuff ENDS -->
         </div>
