@@ -41,7 +41,8 @@
     <!-- header section ends -->
     <!-- tabbed section starts -->
     <style>
-      section.tabroot {
+      section.tabroot img {
+        width: 100%;
       }
       div.tabindex {
         padding: 0;
@@ -110,10 +111,27 @@
         grid-gap: 20px; /* even spacing using grid-gap, You can use percentage values if you want*/
         padding: 20px;
       }
-      div.tabchild section.gridview img.infotable {
+      div.tabchild section.gridview div.infotable {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-rows: auto;
+        justify-self: center;
+        grid-gap: 20px; /* even spacing using grid-gap, You can use percentage values if you want*/
+        padding: 0;
+        /* wtf? */
         margin: 20px auto;
         margin-top: 5px;
         width: calc(100% - 40px);
+      }
+      div.tabchild section.gridview .subsection-heading {
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      div.tabchild section.gridview div.infotable .document {
+        border-radius: 5px;
+        width:100%;
+        height: 400px;
       }
       div.tabchild section.gridview div.gridview div.box {
         padding: 10px;
@@ -152,6 +170,10 @@
           grid-template-columns: repeat(1, calc(100% - 80px));
           grid-template-rows: auto;
         }
+        div.tabchild section.gridview div.infotable {
+          grid-template-columns: repeat(2, calc(100% - 80px));
+          grid-template-rows: auto;
+        }
       }
       @media (min-width: 500px) {
         section.tabroot div.tabcontents {
@@ -174,6 +196,16 @@
         <div class="tabchild" id="cereals">
           <!-- images, cereals stuff STARTS -->
           <section class="gridview doctors">
+            <h2 class="subsection-heading">Below are the details of Breads & Cereals:</h2>
+            <div class="infotable">
+              <!-- TODO -->
+              <iframe
+                class="document"
+                frameborder="0"
+                src="https://docs.google.com/gview?url=https://github.com/AnkitMajee/SwasthHelp/blob/main/Resources/cleaned/res/food/1cereals/1.pdf?raw=true&embedded=true"
+              ></iframe>
+            </div>
+            <h2 class="subsection-heading">Below are the familiar images of Breads & Cereals:</h2>
             <div class="gridview doctors box-container">
               <div class="box">
                 <img
@@ -351,17 +383,32 @@
                 <h3>Boiled Spaghetti</h3>
               </div>
             </div>
-            <img
-              class="infotable"
-              alt="Amity Blight"
-              src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc"
-            />
           </section>
           <!-- images, cereals stuff ENDS -->
         </div>
         <div class="tabchild" id="fruits">
           <!-- images, fruits stuff STARTS -->
           <section class="gridview doctors">
+            <h2 class="subsection-heading">Below are the details of Fruts:</h2>
+            <div class="infotable">
+              <!-- TODO -->
+              <iframe
+                class="document"
+                frameborder="0"
+                src="https://docs.google.com/gview?url=https://github.com/AnkitMajee/SwasthHelp/blob/main/Resources/cleaned/res/food/2fruits/1.pdf?raw=true&embedded=true"
+              ></iframe>
+              <iframe
+                class="document"
+                frameborder="0"
+                src="https://docs.google.com/gview?url=https://github.com/AnkitMajee/SwasthHelp/blob/main/Resources/cleaned/res/food/2fruits/2.pdf?raw=true&embedded=true"
+              ></iframe>
+              <iframe
+                class="document"
+                frameborder="0"
+                src="https://docs.google.com/gview?url=https://github.com/AnkitMajee/SwasthHelp/blob/main/Resources/cleaned/res/food/2fruits/3.pdf?raw=true&embedded=true"
+              ></iframe>
+            </div>
+            <h2 class="subsection-heading">Below are the familiar images of Fruits:</h2>
             <div class="gridview doctors box-container">
               <div class="box">
                 <img src="image/Food/Fruits/Apple Pie.jpg" alt="Image1" />
@@ -600,17 +647,22 @@
                 <h3>Woodapple</h3>
               </div>
             </div>
-            <img
-              class="infotable"
-              alt="Amity Blight"
-              src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc"
-            />
           </section>
           <!-- images, fruits stuff ENDS -->
         </div>
         <div class="tabchild" id="dairy">
           <!-- images, dairy stuff STARTS -->
           <section class="gridview doctors">
+            <h2 class="subsection-heading">Below are the details of Milk & Dairy:</h2>
+            <div class="infotable">
+              <!-- TODO -->
+              <iframe
+                class="document"
+                frameborder="0"
+                src="https://docs.google.com/gview?url=https://github.com/AnkitMajee/SwasthHelp/blob/main/Resources/cleaned/res/food/3dairy/1.pdf?raw=true&embedded=true"
+              ></iframe>
+            </div>
+            <h2 class="subsection-heading">Below are the familiar images of Milk & Dairy:</h2>
             <div class="gridview doctors box-container">
               <div class="box">
                 <img
@@ -774,17 +826,22 @@
                 <h3>Yogurt reduced fat</h3>
               </div>
             </div>
-            <img
-              class="infotable"
-              alt="Amity Blight"
-              src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc"
-            />
           </section>
           <!-- images, dairy stuff ENDS -->
         </div>
         <div class="tabchild" id="seafoods">
           <!-- images, seafoods stuff STARTS -->
           <section class="gridview doctors">
+            <h2 class="subsection-heading">Below are the details of Sea Foods:</h2>
+            <div class="infotable">
+              <!-- TODO -->
+              <iframe
+                class="document"
+                frameborder="0"
+                src="https://docs.google.com/gview?url=https://github.com/AnkitMajee/SwasthHelp/blob/main/Resources/cleaned/res/food/4seafood/1.pdf?raw=true&embedded=true"
+              ></iframe>
+            </div>
+            <h2 class="subsection-heading">Below are the familiar images of Sea Foods:</h2>
             <div class="gridview doctors box-container">
               <div class="box">
                 <img src="image/Food/Sea Food/blue crab.jpg" alt="Image1" />
@@ -873,17 +930,32 @@
                 <h3>Tuna</h3>
               </div>
             </div>
-            <img
-              class="infotable"
-              alt="Amity Blight"
-              src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc"
-            />
           </section>
           <!-- images, seafoods stuff ENDS -->
         </div>
         <div class="tabchild" id="vegetables">
           <!-- images, vegetables stuff STARTS -->
           <section class="gridview doctors">
+            <h2 class="subsection-heading">Below are the details of Vegetables:</h2>
+            <div class="infotable">
+              <!-- TODO -->
+              <iframe
+                class="document"
+                frameborder="0"
+                src="https://docs.google.com/gview?url=https://github.com/AnkitMajee/SwasthHelp/blob/main/Resources/cleaned/res/food/5veges/1.pdf?raw=true&embedded=true"
+              ></iframe>
+              <iframe
+                class="document"
+                frameborder="0"
+                src="https://docs.google.com/gview?url=https://github.com/AnkitMajee/SwasthHelp/blob/main/Resources/cleaned/res/food/5veges/2.pdf?raw=true&embedded=true"
+              ></iframe>
+              <iframe
+                class="document"
+                frameborder="0"
+                src="https://docs.google.com/gview?url=https://github.com/AnkitMajee/SwasthHelp/blob/main/Resources/cleaned/res/food/5veges/3.pdf?raw=true&embedded=true"
+              ></iframe>
+            </div>
+            <h2 class="subsection-heading">Below are the familiar images of Vegetables:</h2>
             <div class="gridview doctors box-container">
               <div class="box">
                 <img
@@ -1146,11 +1218,6 @@
                 <h3>Zucchini</h3>
               </div>
             </div>
-            <img
-              class="infotable"
-              alt="Amity Blight"
-              src="https://lh3.googleusercontent.com/KZ1o0y0qniASnNvhS_e9qH35dAFblZl8QUDbrgb5ncYYWFIrY2_USDyjskt4V9OURankU4xMtAiAMDjRVFA8OFZesBtT6JOo_e4mtkfBlcysPRvHqcwau6neaQQ6WlcCKdJJAaxBvcc"
-            />
           </section>
           <!-- images, vegetables stuff ENDS -->
         </div>
